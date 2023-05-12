@@ -2,7 +2,7 @@ class Task {
   id: string;
   title: string;
   description: string;
-  status?: string;
+  status: string;
 
   constructor(taskTitle: string, taskDescription: string, taskStatus: string, taskId: string) {
     this.title = taskTitle;
