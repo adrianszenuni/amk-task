@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Task from "../models/task";
 
 const API_URL = "https://amk-task-default-rtdb.firebaseio.com";
@@ -20,6 +20,10 @@ type Props = {
 const TasksContextProvider: React.FC<Props> = ({ children }) => {
   const [tasks, setTasks] = useState<Task[]>([]);
 
+  useEffect(() => {
+    getTasks();
+  },[tasks])
+
   const addTaskHandler = async (item: Object) => {
     await fetch(`${API_URL}/tasks.json`, {
       method: "POST",
@@ -29,6 +33,25 @@ const TasksContextProvider: React.FC<Props> = ({ children }) => {
       },
     });
   };
+
+  const getTasks = async () => {
+    const response = await fetch(`${API_URL}/tasks.json`);
+      //  if (!response.ok) {
+      //   throw new Error("Something went wrong!");
+      // }
+      const data = await response.json();
+      const loadedTasks = [];
+      for (const key in data) {
+        loadedTasks.push({
+          id: key,
+          title: data[key].title,
+          description: data[key].description,
+          status: data[key].status,
+        });
+      }
+
+        setTasks(loadedTasks);
+  }
 
   const contextValue: TasksContextObj = {
     tasks: tasks,
