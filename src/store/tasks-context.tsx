@@ -45,28 +45,27 @@ const TasksContextProvider: React.FC<Props> = ({ children }) => {
     setTasksChanged(!tasksChanged);
   };
 
-
   const findTask = (id?: string): Task => {
-    const task = tasks.find(el => el.id === id);
+    const task = tasks.find((el) => el.id === id);
     return new Task(task!.title, task!.description, task!.status, task!.id);
-  }
+  };
 
   const editTask = (item: Task) => {
     const taskData = {
-       title: item.title,
-       description: item.description,
-       status: item.status
-    }
+      title: item.title,
+      description: item.description,
+      status: item.status,
+    };
     fetch(`${API_URL}/tasks/${item.id}.json`, {
       method: "PUT",
       body: JSON.stringify(taskData),
       headers: {
         "Content-Type": "application/json",
-      }
+      },
     });
 
     setTasksChanged(!tasksChanged);
-  }
+  };
 
   const getTasks = useCallback(async () => {
     setIsLoading(true);

@@ -44,10 +44,10 @@ const EditTaskForm: React.FC = () => {
 
   const params = useParams();
   const taskId: string = params.id ? params.id.toString() : "";
-  let findedTask;
+
 
   useEffect(() => {
-    findedTask = ctx.findTask(taskId);
+    let findedTask = ctx.findTask(taskId);
     setEnteredTitle(findedTask.title);
     setEnteredDescription(findedTask.description);
     setSelectedStatus(findedTask.status);

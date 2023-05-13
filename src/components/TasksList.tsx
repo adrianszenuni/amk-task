@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { TasksContext } from "../store/tasks-context";
 
 import TaskItem from "./TaskItem";
