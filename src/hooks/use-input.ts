@@ -42,7 +42,7 @@ const useInput = (validateValue: (value: string) => boolean) => {
 
   const valueIsValid= validateValue(inputState.value);
   const hasError = !valueIsValid && inputState.isTouched;
-  
+
 
   const inputChangeHandler = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     dispatch({

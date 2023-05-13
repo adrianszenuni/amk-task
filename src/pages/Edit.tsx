@@ -1,6 +1,8 @@
+import EditTaskForm from "../components/EditTaskForm";
+
 const Edit: React.FC = () => {
     return (
-        <h1>Edit Page</h1>
+        <EditTaskForm />
     )
 }
 

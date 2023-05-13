@@ -1,0 +1,155 @@
+.form-wrapper {
+  margin: 1.5rem 10%;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form h2 {
+  margin: 0;
+  margin-bottom: 0.7rem;
+}
+
+.control {
+  width: 100%;
+  margin-bottom: 0.7rem;
+}
+
+.control.invalid input {
+  border-color: #aa0b20;
+  background-color: #ffeff1;
+}
+
+.control.invalid textarea {
+  border-color: #aa0b20;
+  background-color: #ffeff1;
+}
+
+.control input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #e9eaeb;
+  border: none;
+  border-bottom: 1px solid #8a8b8b;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.control p {
+  margin: 0;
+  color: #aa0b20;
+}
+
+.control textarea {
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #e9eaeb;
+  border: none;
+  padding: 0.5rem;
+  border-bottom: 1px solid #8a8b8b;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  resize: none;
+  height: 22rem;
+}
+
+.control select {
+  width: 100%;
+  background-color: #e9eaeb;
+  border: none;
+  border-bottom: thin solid #8a8b8b;
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, black 50%),
+    linear-gradient(135deg, black 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+.control select:focus {
+  background-image: linear-gradient(45deg, black 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, black 50%);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+.control h2 {
+  margin: 0 0 0.9rem 0;
+  font-size: 1.2em;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-actions .cancelBtn {
+  margin-left: 10px;
+  background-color: #ffffff;
+  border: 1px solid #8a8b8b;
+  color: black;
+}
+
+.form button {
+  height: 3rem;
+  width: 100%;
+  background-color: #1775b9;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form button svg {
+  height: 18px;
+  width: 18px;
+  stroke: #ffffff;
+  margin-right: 0.9rem;
+}
+
+svg path {
+  fill: #ffffff;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-wrapper {
+    margin: 1.8rem 10%;
+  }
+
+  .form {
+    width: 30rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .form-wrapper {
+    margin: 2rem 10%;
+  }
+
+  .form {
+    width: 40rem;
+  }
+}
